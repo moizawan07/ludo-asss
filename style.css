@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border: 0;
+    outline: 0;
+}
+
+body{
+    display: flex;
+   padding-left: 1.7%;
+    align-items: end;
+    min-height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1606167668584-78701c57f13d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    /* background-image: url(https://wallpapers.com/images/hd/ludo-king-blue-squares-background-f2l0zc9t3trvwxxz.jpg); */
+    /* background-image: url(https://miro.medium.com/v2/resize:fit:1400/0*-wnrsY_L5GVikL61.jpg); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 1300px;
+}
+.main-con{
+    width: 300px;
+    height: 350px;
+    background-color: rgb(20, 20, 20);
+    background-color: transparent;
+    /* border: 1px double rgb(88, 86, 86); */
+    border-radius: inset 0px 0px 5px white;
+    border-radius: 8px;display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0px 0px 5px rgb(117, 117, 228); */
+    flex-direction: column;
+    padding-top: 20px;
+}
+.container{
+    display: grid;
+    place-items: center;
+    width: 250px;
+    background-color:rgb(25, 23, 23);
+   backdrop-filter: blur(25px);
+    padding: 40px 0 40px;
+    /* box-shadow: 0px 0px 4px white, 0px 0px 5px white, 1px 1px 2px white; */
+
+    border: 5px dotted white;
+    border-top-color: #FEFC4F;
+    border-bottom-color: #BD0000;
+   border-left-color: #3195D3;
+   border-right-color: #7DB627;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px black, -2px -2px 5px black;
+    background-color:black;
+}
+
+
+.dice{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateY(45deg);
+    transition: 0.5s ease;
+    /* animation: rolling 4s; */
+}
+
+@keyframes rolling {
+    50%{
+        transform: rotateX(455deg) rotateY(455deg);
+    }
+}
+
+
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 5px solid white;
+    background: linear-gradient(145deg, #dddbd8, #fff);
+    transform-style: preserve-3d;
+}
+
+.face::before{
+    content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 20px;
+   background: white;
+transform: translateZ(-1px);
+}
+
+.face::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #000;
+    border-radius: 50%;
+}
+.front{
+    transform: translateZ(50px);
+}
+
+.back{
+    transform: rotateX(180deg) translateZ(50px);
+}
+
+.top{
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottom{
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+.right{
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.left{
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+/* .dice{
+    transform: rotateX(0deg) rotateY(0deg);
+} */
+
+.front::after{
+    width: 30px;
+    height: 30px;
+    background-color: red;  
+    margin: -15px 0 0 -15px;
+}
+.back::after{
+    margin: -35px 0 0 -30px;
+    box-shadow: 40px 0,
+    0 25px,
+    40px 25px,
+    0 50px,
+    40px 50px;
+    background-color: orange;
+    color: orange;
+}
+
+.top::after{
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 40px;
+    background-color: blue;
+   color: blue;
+}
+
+.bottom::after{
+    margin: -36px 0 0 -36px;
+    box-shadow: 26px 26px,
+    52px 52px,
+    52px 0,
+    0 52px;
+    background-color: blue;
+   color: blue;
+}
+.right::after{
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 0,
+    0 40px,
+    40px 40px;
+    background-color: red;
+   color: red;
+}
+.left::after{
+    margin: -35px 0 0 -35px;
+    box-shadow: 25px 25px,
+    50px 50px;
+   background-color: red;
+   color: red;
+}
+
+#btn{
+    position: relative;
+    /* top: 20px; */
+    margin-top: 20px;
+    /* right: 177px; */
+    border: 1px solid gray;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid white;
+    font-size: 16px;
+    color: red;
+    cursor: pointer;
+  &:hover{
+    background-color: transparent;
+    border: 2px solid red;
+    color: white;
+  }  
+}
